@@ -29,24 +29,6 @@ const BusiestHour = () => {
         hourlyTotals[hour]++;
       });
 
-      // Calculate the average visits per hour and round to two decimals
-      const averageVisitsPerHour = hourlyTotals.map((total) => (total / 30).toFixed(2));
-
-      // Log the array with the rounded average visits per hour
-      console.log('Average Visits Per Hour of the Week:', averageVisitsPerHour);
-      fetch('https://backend-for-chrome-extension.onrender.com/week-hours-average', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(averageVisitsPerHour),
-      })
-        .then((response) => response.json())
-        .then((data) => console.log('Response:', data))
-        .catch((error) => {
-          console.error('Error:', error);
-        });
-
       // Find the busiest hour
       const maxCount = Math.max(...hourlyCounts);
       const busiestHourIndex = hourlyCounts.indexOf(maxCount);
