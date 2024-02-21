@@ -6,7 +6,6 @@ import CountPerMonthGraph from '../components/monthComponents/CountMonthWebsiteG
 
 
 const PastMonth = () => {
-  console.clear();
   return (
     <div>
       <MonthStats/>

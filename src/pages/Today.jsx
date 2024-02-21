@@ -6,7 +6,6 @@ import LineChart from '../components/dayComponents/HourlyCountGraph';
 
 
 const Today = () => {
-  console.clear();
   return (
     <div>
       <StatsOfTheDay/>

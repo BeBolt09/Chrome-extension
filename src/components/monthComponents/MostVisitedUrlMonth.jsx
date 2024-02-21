@@ -26,14 +26,6 @@ const MostVisitedUrl = () => {
 
       const sortedEntries = Object.entries(domainCountMap).sort(([, a], [, b]) => b - a);
       const mostVisitedDomain = sortedEntries[0] ? sortedEntries[0][0] : '';
-
-      // Log the top 10 most popular websites with visit counts
-      const top10 = sortedEntries.slice(0, 10);
-      console.log('Top 10 Most Popular Websites:', top10);
-
-      const jsonArray = top10.map(([url, count]) => ({ url, count }));
-      console.log(jsonArray);
-
       setMostVisitedUrl(mostVisitedDomain);
 
     });

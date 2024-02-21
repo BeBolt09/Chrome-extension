@@ -5,7 +5,6 @@ import WeekHourAverage from '../components/weekComponents/BusiestHourWeekGraph';
 import MostVisitedWebsiteGraph from '../components/weekComponents/MostVisitedUrlWeekGraph';
 
 const PastWeek = () => {
-  console.clear();
   return (
     <div>
       <WeekStats/>

@@ -17,12 +17,7 @@ const MostVisitedUrl = () => {
       }, {});
 
       const sortedEntries = Object.entries(domainCountMap).sort(([, a], [, b]) => b - a);
-      const sortedDomainCountMap = Object.fromEntries(sortedEntries);
-      console.log('Sorted Domain Count Map:', sortedDomainCountMap);
-
       const mostVisitedDomain = sortedEntries[0][0];
-      console.log('Most Visited Domain:', mostVisitedDomain);
-
       setMostVisitedUrl(`${mostVisitedDomain}`);
     });
   }, []);

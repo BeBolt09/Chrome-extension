@@ -5,7 +5,6 @@ import CustomNavbar from './components/Navbar';
 import Today from './pages/Today';
 import PastWeek from './pages/PastWeek'
 import PastMonth from './pages/PastMonth';
-import BetaMessage from './components/BetaMessage';
 
 
 function App() {
@@ -32,17 +31,11 @@ function App() {
     setMonthIsVisible(()=>true);
     setBetaMessageIsVisible(()=>false)
   }
-  const seeBetaMessage = () => {
-    setTodayIsVisible(()=>false);
-    setWeekIsVisible(()=>false);
-    setMonthIsVisible(()=>false);
-    setBetaMessageIsVisible(()=>true)
-  }
 
   return (
     <>
       <div>
-        <CustomNavbar seeToday={seeToday} seePastWeek={seePastWeek} seePastMonth={seePastMonth} seeBetaMessage={seeBetaMessage}/>
+        <CustomNavbar seeToday={seeToday} seePastWeek={seePastWeek} seePastMonth={seePastMonth}/>
         {isTodayVisible && <Today />}
         {isWeekVisible && <PastWeek/>}
         {isMonthVisible && <PastMonth/>}

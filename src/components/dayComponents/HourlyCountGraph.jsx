@@ -11,15 +11,12 @@ const LineChart = () => {
         let startTime = currentDate.getTime();
 
         chrome.history.search({ text: '', startTime, maxResults: 1000 }, function (data) {
-            console.log("Browsing history data:", data);
             let urlTimestamps = data.map(item => ({ url: item.url, timestamp: item.lastVisitTime }));
-            console.log("URL timestamps:", urlTimestamps);
             let groupedByTime = {};
             urlTimestamps.forEach(item => {
                 let hour = new Date(item.timestamp).getHours();
                 groupedByTime[hour] = groupedByTime[hour] ? [...groupedByTime[hour], item.url] : [item.url];
             });
-            console.log(groupedByTime)
             setGroupedByTime(groupedByTime);
             setLoading(false);
         });

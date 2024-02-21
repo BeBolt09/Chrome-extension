@@ -45,12 +45,8 @@ const MostVisitedWebsiteGraph = () => {
 
       // Log the top 10 most popular websites with visit counts
       const top10 = sortedEntries.slice(0, 10);
-      console.log('Top 10 Most Popular Websites:', top10);
-
-      const jsonArray = top10.map(([url, count]) => ({ url, count }));
       const urls = top10.map(([url]) => url);
       const counts = top10.map(([, count]) => count);
-      console.log(jsonArray);
 
       const chartData = {
         labels: urls,

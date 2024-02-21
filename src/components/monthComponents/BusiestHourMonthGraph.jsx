@@ -30,8 +30,6 @@ const MonthHourAverage = () => {
 
       const averageVisitsPerHour = hourlyTotals.map((total) => (total / 30).toFixed(2));
       setData(averageVisitsPerHour);
-      console.log('Average Visits Per Hour of the Week:', averageVisitsPerHour);
-
       // Find the busiest hour
       const maxCount = Math.max(...hourlyCounts);
       const busiestHourIndex = hourlyCounts.indexOf(maxCount);

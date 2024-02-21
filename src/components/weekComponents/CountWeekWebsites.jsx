@@ -7,29 +7,6 @@ const WebsiteCounter = () => {
   const [week3Count, setWeek3Count] = useState(0);
   const [week4Count, setWeek4Count] = useState(0);
 
-  const postVisitedCount = (json) => {
-    fetch('https://backend-for-chrome-extension.onrender.com/week-url-count', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(json),
-    })
-      .then((response) => response.json())
-      .then((data) => console.log('Response:', data))
-      .catch((error) => {
-        console.error('Error:', error);
-      });
-  };
-
-  const sendVisitedCount = (page, count) => {
-    const json = {
-      page,
-      count,
-    };
-    postVisitedCount(json);
-  };
-
   const fetchUrlCountForWeek = (weekOffset, setCount) => {
     const currentTime = new Date().getTime();
     let startTime;
@@ -68,7 +45,6 @@ const WebsiteCounter = () => {
     chrome.history.search({ text: '', startTime, endTime, maxResults: 10000 }, (historyItems) => {
       const totalCount = historyItems.length;
       setCount(totalCount);
-      sendVisitedCount(`Week - ${weekOffset}`, totalCount);
     });
   };
 

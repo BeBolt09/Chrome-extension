@@ -4,7 +4,6 @@ import { Navbar, Nav, Container } from 'react-bootstrap';
 const CustomNavbar = ({ seeToday, seePastWeek, seePastMonth, seeBetaMessage }) => {
   return (
     <Navbar bg="dark" variant="dark" fixed="top">
-      <button onClick={seeBetaMessage} className='betabtn ml-4 mr-2'>Beta Version</button>
       <Container>  
         <Navbar.Brand>
         <img
@@ -18,7 +17,7 @@ const CustomNavbar = ({ seeToday, seePastWeek, seePastMonth, seeBetaMessage }) =
           <Nav.Link><button onClick={seePastMonth}>Past Month</button></Nav.Link>
         </Nav>
         <Nav>
-          <Nav.Link href="https://www.linkedin.com/in/sebastien-dupont-15b53826a/" className='mr-4'>Contact me</Nav.Link>
+          <Nav.Link href="https://www.linkedin.com/in/sebastien-dupont-15b53826a/" className='mr-4'>Made by Sebastien</Nav.Link>
         </Nav>
       </Container>
     </Navbar>
