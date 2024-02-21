@@ -36,17 +36,6 @@ const MostVisitedUrl = () => {
 
       setMostVisitedUrl(mostVisitedDomain);
 
-      fetch('https://backend-for-chrome-extension.onrender.com/receive-visited-websites', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(jsonArray),
-      })
-        .then(response => response.json())
-        .then(data => console.log('Server response:', data))
-        .catch(error => console.error('Error sending data to server:', error));
-
     });
   }, []);
 
